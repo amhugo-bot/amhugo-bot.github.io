@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Professionnel</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            color: #222;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+            color: #fff;
+            padding: 32px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            background: #eee;
+        }
+        .profile-info h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        .profile-info p {
+            margin-right: 50;
+            font-size: 1.1em;
+            opacity: 0.85;
+        }
+        .contact {
+            text-align: right;
+            font-size: 1em;
+        }
+        .contact a {
+            color: #fff;
+            text-decoration: underline;
+            margin-left: 8px;
+        }
+        main {
+            padding: 32px 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+        section {
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 1.3em;
+            color: #2b5876;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 4px;
+            font-weight: 700;
+        }
+        ul, .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-list li {
+            display: inline-block;
+            background: #e3e7ee;
+            color: #2b5876;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 4px 6px 4px 0;
+            font-size: 0.98em;
+        }
+        .exp-item, .edu-item {
+            margin-bottom: 18px;
+        }
+        .exp-title, .edu-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #4e4376;
+        }
+        .exp-date, .edu-date {
+            font-size: 0.95em;
+            color: #888;
+            margin-bottom: 2px;
+        }
+        .exp-desc, .edu-desc {
+            font-size: 0.98em;
+            color: #333;
+            margin-top: 2px;
+        }
+        @media (max-width: 800px) {
+            main {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 24px 16px;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px 16px;
+            }
+            .contact {
+                text-align: center;
+                margin-left: 0px;
+            }
+            .container {
+                margin: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="pp.jpg" alt="Photo de profil" class="profile-img">
+                <div class="profile-info">
+                    <h1>HUGUES AMEN AHOSSI</h1>
+                    <p>Etudiant en Cybersécurité</p>
+                </div>
+            </div>
+            <div class="contact">
+                <div>Tél : <a href="tel:+33661258759">0661258759</a></div>
+                <div>Email : <a href="ahossihuguesamen@gmail.com">ahossihuguesamen@gmail.com</a></div>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <section>
+                    <h2>Compétences</h2>
+                    <ul class="skills-list">
+                        <li>Monitoring du traffic réseau</li>
+                        <li>Reverse engineering</li>
+                        <li>Programmation en Java, C++, HTML, JS, PHP</li>
+                        <li>Pentesting</li>
+                        <li>Sécurisation d'environnement Cloud</li>
+                        <li>Configuration des serveurs DHCP, DNS, WEB</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Langues</h2>
+                    <ul>
+                        <li>Français (natif)</li>
+                        <li>Anglais (courant)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Centres d'intérêt</h2>
+                    <ul>
+                        <li>Lecture</li>
+                        <li>Musique</li>
+                        <li>Challenge rootme</li>
+                    </ul>
+                </section>
+            </aside>
+            <section>
+                <section>
+                    <h2>Expérience professionnelle</h2>
+                    <div class="exp-item">
+                        <div class="exp-title">Stage en Administration des Réseaux - Cour Constitutionnelle du Bénin</div>
+                        <div class="exp-date">Avril 2023 - Juillet 2023</div>
+                        <div class="exp-desc">Administration du pare-feu Pfsense, Configurations réseaux et serveurs</div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Formation</h2>
+                    <div class="edu-item">
+                        <div class="edu-title">Bachelor Spécialiste en Cybersécurité - Cybersecurity Business School de Lyon</div>
+                        <div class="edu-date">En cours......</div>
+                        <div class="edu-desc">Spécialisation en Cybersécurité.</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Licence en Sécurité Informatique - Institut de Formation et de Recherche en Informatique du Bénin</div>
+                        <div class="edu-date">2020-2023</div>
+                        <div class="edu-desc">Bases en programmation, algorithmique et systèmes d'information; pentesting, configuration des serveurs.</div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
