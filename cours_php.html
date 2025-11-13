@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cours_php.css">
+    <title>Du PHP</title>
+</head>
+<body>
+<div class="slide-container full-bg-image" id="slide1" style="background-image: linear-gradient(rgba(79, 70, 229, 0.6), rgba(30, 41, 59, 0.7)), url('http://googleusercontent.com/image_collection/image_retrieval/18246425434954101437');">
+    <div class="content-overlay">
+        <h1>Les Essentiels du PHP</h1>
+        <p class="subtitle">Un cours complet pour débutants couvrant les 7 concepts fondamentaux.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">a. Variables et Types de Données</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3><i class="fa-solid fa-dollar-sign"></i> Variables</h3>
+                <p>Une variable est une "boîte" pour stocker une information. En PHP, elle doit toujours commencer par un <strong>$</strong>.</p>
+                <p class="code-snippet">
+                    $nom = 'Alice'; <span style="color: #94a3b8;">// String</span><br>
+                    $age = 30; <span style="color: #94a3b8;">// Integer</span><br>
+                    $estMajeur = true; <span style="color: #94a3b8;">// Boolean</span>
+                </p>
+                <p>Elles sont sensibles à la casse (<strong>$nom</strong> est différent de <strong>$Nom</strong>).</p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-boxes-stacked"></i> Types de Données</h3>
+                <p>PHP est un langage "faiblement typé" : il devine le type de la donnée pour vous. Pas besoin de déclarer le type !</p>
+                <ul>
+                    <li><strong>Scalaires :</strong> String (texte), Integer (entier), Float (décimal), Boolean (vrai/faux).</li>
+                    <li><strong>Composés :</strong> Array (tableau), Object (objet).</li>
+                </ul>
+                <p class="tip"><strong>Astuce :</strong> Pensez au <strong>$</strong> comme un sigle "Dollar" pour une "valeur" ou un "trésor" que vous stockez.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">a. La Portée des Variables</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Locale</h3>
+                <p>Une variable déclarée <strong>dans</strong> une fonction n'est visible que <strong>dans</strong> cette fonction. Elle naît et meurt avec la fonction.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>Globale</h3>
+                <p>Déclarée <strong>en dehors</strong> de toute fonction. Pour l'utiliser <strong>dans</strong> une fonction, vous devez l'importer avec le mot-clé <code>global</code>.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-database"></i></div>
+                <h3>Statique</h3>
+                <p>Une variable <strong>locale</strong> spéciale qui <strong>ne perd pas</strong> sa valeur lorsque la fonction se termine. Elle garde sa mémoire.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">b. Structures Alternatives (if / switch)</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3><i class="fa-solid fa-code-branch"></i> if / elseif / else</h3>
+                <p>Utilisé pour les décisions binaires (vrai/faux) ou des chemins complexes.</p>
+                <p class="code-snippet">
+                    <strong>if</strong> ($age > 18) {<br>
+                    &nbsp;&nbsp;echo "Majeur";<br>
+                    } <strong>elseif</strong> ($age == 18) {<br>
+                    &nbsp;&nbsp;echo "Juste majeur";<br>
+                    } <strong>else</strong> {<br>
+                    &nbsp;&nbsp;echo "Mineur";<br>
+                    }
+                </p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-shuffle"></i> switch</h3>
+                <p>Idéal pour tester <strong>une seule</strong> variable contre <strong>plusieurs</strong> valeurs possibles.</p>
+                <p class="code-snippet">
+                    <strong>switch</strong> ($couleur) {<br>
+                    &nbsp;&nbsp;<strong>case</strong> "rouge": ... <strong>break</strong>;<br>
+                    &nbsp;&nbsp;<strong>case</strong> "bleu": ... <strong>break</strong>;<br>
+                    &nbsp;&nbsp;<strong>default</strong>: ... <br>
+                    }
+                </p>
+                <p class="tip"><strong>Astuce :</strong> Pensez <code>switch</code> comme un aiguillage de train (une entrée, plusieurs sorties) et <code>if</code> comme un GPS (plusieurs recalculs).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">c. Les Boucles (Répétitions)</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-sync"></i></div>
+                <h3>while</h3>
+                <p><strong>Tant que</strong> la condition est vraie, on exécute. La condition est vérifiée <strong>avant</strong> chaque tour. Peut ne jamais s'exécuter.</p>
+                <p class="code-snippet"><strong>while</strong> ($i < 10) { ... $i++; }</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-list-ol"></i></div>
+                <h3>for</h3>
+                <p><strong>Pour</strong> un nombre de tours défini. On sait d'avance combien de fois on veut boucler. Parfait pour compter.</p>
+                <p class="code-snippet"><strong>for</strong> ($i = 0; $i < 10; $i++) { ... }</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                <h3>foreach</h3>
+                <p>Le spécialiste des <strong>tableaux</strong>. Permet de parcourir "chaque" élément d'un tableau, un par un. C'est le plus simple !</p>
+                <p class="code-snippet"><strong>foreach</strong> ($tableau <strong>as</strong> $element) { ... }</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">d. Procédures / Fonctions</h2>
+    <div class="content-area">
+        <div class="two-column rounded-image-layout">
+            <div>
+                <div class="image-wrapper"><img src="ico11.jpg" alt="Icône de livre de recettes"></div>
+            </div>
+            <div>
+                <h3>Une "Recette" Réutilisable</h3>
+                <p>Une fonction est un bloc de code que vous nommez et que vous pouvez "appeler" (exécuter) quand vous le souhaitez. Elle évite de répéter du code.</p>
+                <p class="code-snippet">
+                    <span style="color: #94a3b8;">// Définition de la recette</span><br>
+                    <strong>function</strong> direBonjour(<strong>$nom</strong>) {<br>
+                    &nbsp;&nbsp;<strong>return</strong> "Bonjour, " . $nom;<br>
+                    }<br><br>
+                    <span style="color: #94a3b8;">// Appel de la recette</span><br>
+                    echo direBonjour("Alice");
+                </p>
+                <ul>
+                    <li><strong>Paramètres :</strong> Les "ingrédients" ($nom) que vous donnez.</li>
+                    <li><strong>Return :</strong> Le "plat préparé" que la fonction vous rend.</li>
+                </ul>
+                <p class="tip"><strong>Astuce :</strong> Pensez <strong>DRY</strong> : <strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself (Ne vous répétez pas).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">e. Les Tableaux (Arrays)</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3><i class="fa-solid fa-list-ol"></i> Tableau Numéroté (Indexé)</h3>
+                <p>Une "commode" où les tiroirs sont numérotés, commençant par 0.</p>
+                <p class="code-snippet">
+                    $fruits = ['Pomme', 'Banane', 'Cerise'];<br><br>
+                    <span style="color: #94a3b8;">// Accès au premier élément (tiroir 0)</span><br>
+                    echo $fruits[0]; <span style="color: #94a3b8;">// Affiche "Pomme"</span>
+                </p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-tags"></i> Tableau Associatif (Clé -> Valeur)</h3>
+                <p>Une "commode" où vous mettez des étiquettes (clés) sur les tiroirs.</p>
+                <p class="code-snippet">
+                    $utilisateur = [<br>
+                    &nbsp;&nbsp;'nom' => 'Dupont',<br>
+                    &nbsp;&nbsp;'age' => 42<br>
+                    ];<br><br>
+                    <span style="color: #94a3b8;">// Accès par l'étiquette (clé)</span><br>
+                    echo $utilisateur['nom']; <span style="color: #94a3b8;">// Affiche "Dupont"</span>
+                </p>
+            </div>
+        </div>
+        <p class="tip" style="width: 100%; text-align: center; margin-top: 20px;"><strong>Astuce :</strong> <code>foreach</code> est le meilleur ami des tableaux pour les parcourir.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">e. Parcourir les Tableaux avec foreach</h2>
+    <div class="content-area" style="flex-direction: column; align-items: flex-start;">
+        
+        <h3>Parcourir un tableau numéroté :</h3>
+        <p>On récupère seulement la <strong>valeur</strong>.</p>
+        <p class="code-snippet" style="width: 100%;">
+            $fruits = ['Pomme', 'Banane'];<br>
+            <strong>foreach</strong> ($fruits <strong>as</strong> $fruit) {<br>
+            &nbsp;&nbsp;echo $fruit; <span style="color: #94a3b8;">// Affiche "Pomme", puis "Banane"</span><br>
+            }
+        </p>
+
+        <h3>Parcourir un tableau associatif :</h3>
+        <p>On récupère la <strong>clé</strong> ET la <strong>valeur</strong>.</p>
+        <p class="code-snippet" style="width: 100%;">
+            $utilisateur = ['nom' => 'Dupont', 'age' => 42];<br>
+            <strong>foreach</strong> ($utilisateur <strong>as</strong> $cle => $valeur) {<br>
+            &nbsp;&nbsp;echo $cle . " : " . $valeur; <span style="color: #94a3b8;">// Affiche "nom : Dupont", etc.</span><br>
+            }
+        </p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">f. Include / Require</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-exclamation-triangle"></i></div>
+                <h3>include</h3>
+                <p>"J'inclus... si je trouve." Si le fichier est manquant, PHP génère un <strong>Warning</strong> (une alerte), mais le script <strong>continue</strong>.</p>
+                <p class="tip"><strong>Astuce :</strong> "Inclus" = Optionnel.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-ban"></i></div>
+                <h3>require</h3>
+                <p>"J'exige !" Si le fichier est manquant, PHP génère une <strong>Fatal Error</strong> (erreur fatale) et le script <strong>s'arrête</strong> net.</p>
+                <p class="tip"><strong>Astuce :</strong> "Requis" = Essentiel.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-check-double"></i></div>
+                <h3>_once</h3>
+                <p><code>include_once</code> et <code>require_once</code>. C'est la même chose, mais cela garantit que le fichier n'est chargé <strong>qu'une seule fois</strong>, même si on l'appelle 10 fois. C'est la méthode la plus sûre !</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="slide-container" id="slide10">
+    <div class="section-title-layout">
+        <h2>g. Transmettre des Données</h2>
+        <hr>
+        <p>Faire "parler" les pages entre elles : GET, POST, et SESSION.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">g. GET (par URL) vs POST (par Formulaire)</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3><i class="fa-solid fa-link"></i> GET ($_GET)</h3>
+                <p>Les données sont passées dans l'<strong>URL</strong> (visibles par tous).</p>
+                <p class="code-snippet" style="font-size: 14px;">
+                    <span style="color: #94a3b8;">// url: mapage.php?id=123&action=edit</span><br>
+                    $id = $_GET['id']; <span style="color: #94a3b8;">// $id vaut 123</span>
+                </p>
+                <p><strong>Utilisation :</strong> ID de page, recherches, filtres. (Données non sensibles).</p>
+                <p class="tip"><strong>Astuce :</strong> "<strong>GET</strong>" = "Va <strong>chercher</strong> cette page/info". C'est public.</p>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-envelope"></i> POST ($_POST)</h3>
+                <p>Les données sont passées de manière <strong>cachée</strong> (dans le corps de la requête).</p>
+                <p class="code-snippet">
+                    <span style="color: #94a3b8;">// <form method="POST"> ... </form></span><br>
+                    $password = $_POST['mot_de_passe'];
+                </p>
+                <p><strong>Utilisation :</strong> Formulaires de connexion, d'inscription. (Données sensibles ou longues).</p>
+                <p class="tip"><strong>Astuce :</strong> "<strong>POST</strong>" = "<strong>Poster</strong> une lettre (formulaire)". C'est privé.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="slide-container" id="slide12">
+    <h2 class="slide-title">g. Les Sessions ($_SESSION)</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>La "Mémoire" du Visiteur</h3>
+                <p>Une session permet de stocker des informations sur un visiteur (comme son nom) et de les réutiliser sur <strong>toutes les pages</strong> du site pendant sa visite.</p>
+                
+                <p><strong>Étape 1 : Démarrer (sur TOUTES les pages, au TOUT début)</strong></p>
+                <p class="code-snippet"><strong>session_start();</strong></p>
+
+                <p><strong>Étape 2 : Stocker (Ex: page de connexion)</strong></p>
+                <p class="code-snippet">$_SESSION['utilisateur'] = "Alice";</p>
+
+                <p><strong>Étape 3 : Récupérer (Ex: page profil)</strong></p>
+                <p class="code-snippet">echo "Bonjour, " . $_SESSION['utilisateur'];</p>
+                
+                <p class="tip"><strong>Astuce :</strong> La Session est le "<strong>sac à dos</strong>" de l'utilisateur. Il le garde avec lui de page en page.</p>
+            </div>
+            <div>
+                <div class="image-wrapper-rect"><img src="ico12.jpg" alt="Icône de sac à dos"></div>
+            </div>
+        </div>
+    </div>
+</div>
